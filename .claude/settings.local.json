@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.sleightofhandsigns.com)",
+      "WebFetch(domain:veryfinesigns.com)",
+      "WebFetch(domain:www.veryfinesigns.com)",
+      "Bash(curl -sL \"https://www.sleightofhandsigns.com/\")",
+      "Bash(open *)",
+      "WebFetch(domain:www.sunsignsstpete.com)",
+      "Bash(curl -sL \"https://www.sunsignsstpete.com/\" -o /tmp/sunsigns.html)",
+      "Read(//tmp/**)",
+      "Bash(python3 *)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" -H \"x-ig-app-id: 936619743392459\" \"https://www.instagram.com/api/v1/users/web_profile_info/?username=sleightofhandsigns\" -o /tmp/igapi.json -w \"HTTP %{http_code} | size %{size_download}\\\\n\")",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://www.veryfinesigns.com/\" -o /tmp/vfs.html -w \"HTTP %{http_code} | size %{size_download}\\\\n\")",
+      "Bash(grep -oiE '\\(animation|transition|transform\\)[^;\"{]{0,60}' vfs.html)",
+      "Bash(grep -iE '\\\\.\\(jpe?g|png|webp\\)$')",
+      "Read(//Users/jasminecollins/Desktop/**)",
+      "Read(//Users/jasminecollins/Downloads/**)",
+      "Bash(node *)",
+      "Bash(pip3 install *)",
+      "Bash(/tmp/imgenv/bin/pip install *)",
+      "Bash(/tmp/imgenv/bin/python3 *)"
+    ]
+  }
+}
