@@ -251,22 +251,6 @@
   .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .check{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--ink)}
   .check input{width:17px;height:17px;accent-color:var(--gold);cursor:pointer;flex:none}
-  /* file drop */
-  .drop{
-    border:1.5px dashed var(--line);border-radius:3px;background:#fff;
-    padding:26px;text-align:center;cursor:pointer;transition:.2s;
-  }
-  .drop:hover{border-color:var(--gold);background:#fffdf8}
-  .drop.dragover{border-color:var(--gold);background:#fffdf8}
-  .drop b{display:block;font-family:Georgia,serif;font-size:1.05rem;margin-bottom:4px}
-  .drop small{color:var(--muted)}
-  .drop input{display:none}
-  .filename{margin-top:10px;font-size:.85rem;color:var(--gold);font-weight:700}
-  .filelist{margin-top:10px;display:flex;flex-direction:column;gap:6px;text-align:left}
-  .filelist .frow{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fffdf8;border:1px solid var(--line);border-radius:3px;padding:6px 10px;font-size:.85rem;color:var(--ink)}
-  .filelist .frow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .filelist .frow button{flex:none;background:none;border:none;color:#a33;font-size:1rem;line-height:1;cursor:pointer;padding:0 2px}
-  .filelist .frow button:hover{color:#611}
   .form-err{color:#a33;font-size:.85rem;margin-top:8px;display:none}
   .form-note{color:var(--muted);font-size:.82rem;margin-top:18px}
   /* success */
@@ -418,6 +402,11 @@
     </div>
 
     <form id="signForm" novalidate>
+      <!-- Web3Forms: get a free access key at https://web3forms.com and paste it below -->
+      <input type="hidden" name="access_key" value="51cc6164-ae00-4d99-a303-01eab7f720a8">
+      <input type="hidden" name="subject" value="New Sign Project Inquiry — Sleight of Hand Signs">
+      <input type="hidden" name="from_name" value="Sleight of Hand Signs website">
+
       <!-- contact -->
       <div class="row">
         <div class="field">
@@ -489,34 +478,28 @@
         </div>
       </div>
 
+      <!-- other / freeform service description -->
+      <div class="field">
+        <label for="otherService">Don't see what you're looking for? Describe it here</label>
+        <textarea class="input" id="otherService" name="other_service" placeholder="Tell us more about the service you need"></textarea>
+      </div>
+
       <!-- project size -->
       <div class="field">
         <label for="size">Let us know how big your project is</label>
         <input class="input" type="text" id="size" name="size" placeholder="Size of the sign or measurement of the area to be painted">
       </div>
 
-      <!-- file upload -->
-      <div class="field">
-        <span class="flabel">Upload any logos, mockups or reference images</span>
-        <label class="drop" id="drop">
-          <b>Upload File</b>
-          <small>Max 15MB</small>
-          <input type="file" id="file" name="file" multiple>
-          <div class="filelist" id="filelist"></div>
-        </label>
-      </div>
-
       <div class="form-err" id="formErr">Please fill in the required fields and choose at least one service.</div>
 
-      <button type="submit" class="btn btn-gold" style="border:none;cursor:pointer;font-family:inherit">SEND</button>
-      <p class="form-note">This is a mockup form — submissions aren't wired to email yet. See the note at the bottom of the page source for how to connect it to Seth's inbox.</p>
+      <button type="submit" class="btn btn-gold" id="submitBtn" style="border:none;cursor:pointer;font-family:inherit">SEND</button>
     </form>
 
     <!-- success state -->
     <div class="form-ok" id="formOk">
       <div class="mark">✦</div>
       <h3>Thanks for submitting!</h3>
-      <p>Your request is on its way to Seth. He'll reply with a free sketch and estimate at his soonest availability.</p>
+      <p>Have logos, mockups, or reference images? Email them to us directly at <a href="mailto:sleightofhandsigns@gmail.com" style="color:inherit;border-bottom:1px solid var(--gold)">sleightofhandsigns@gmail.com</a>.</p>
     </div>
   </div>
 </section>
@@ -550,26 +533,50 @@
     "images/carousel/IMG_4459.jpeg",
     "images/carousel/6BF30488-8852-46EF-9D51-ADFB2BDC0317.JPG",
     "images/carousel/IMG_4057.jpeg",
-    "images/carousel/IMG_4502.jpeg",
-    "images/carousel/IMG_4847.jpg",
-    "images/carousel/61B20924-6FD7-495B-9A25-D93412DE67B5.JPG",
-    "images/carousel/IMG_4849.jpg",
-    "images/carousel/IMG_4848.jpg",
-    "images/carousel/IMG_4854.jpg",
-    "images/carousel/IMG_1356.jpeg",
-    "images/carousel/IMG_4851.jpg",
-    "images/carousel/IMG_2489.jpeg",
+    "images/carousel/PXL_20260224_172427393.jpg",
+    "images/carousel/PXL_20251011_172328083.jpg",
     "images/carousel/IMG_4906.JPG",
-    "images/carousel/IMG_1614.jpeg",
-    "images/carousel/IMG_4853.jpg",
+    "images/carousel/IMG_4854.jpg",
+    "images/carousel/PXL_20260429_232843088.jpg",
+    "images/carousel/PXL_20250107_002202260~2.jpg",
+    "images/carousel/IMG_4849.jpg",
+    "images/carousel/PXL_20260513_155410572.jpg",
+    "images/carousel/PXL_20251121_203118420.jpg",
+    "images/carousel/PXL_20260511_231718796.jpg",
+    "images/carousel/IMG_1356.jpeg",
+    "images/carousel/IMG_2489.jpeg",
+    "images/carousel/PXL_20250811_160022339.jpg",
     "images/carousel/IMG_4098.jpeg",
-    "images/carousel/low-bar.webp",
-    "images/carousel/IMG_4845.jpg",
+    "images/carousel/IMG_4847.jpg",
+    "images/carousel/b3519d2d-f4c2-4697-86f9-1fda74197cec.jpg",
+    "images/carousel/IMG_4853.jpg",
+    "images/carousel/IMG_4848.jpg",
+    "images/carousel/PXL_20260113_202457223.jpg",
     "images/carousel/IMG_4844.jpg",
-    "images/carousel/IMG_4850.jpg",
+    "images/carousel/PXL_20250313_220213526.jpg",
+    "images/carousel/IMG_20241221_135657.jpg",
+    "images/carousel/low-bar.webp",
+    "images/carousel/IMG_4851.jpg",
+    "images/carousel/PXL_20250408_170639364.jpg",
+    "images/carousel/IMG_1614.jpeg",
+    "images/carousel/PXL_20251124_233852328.jpg",
+    "images/carousel/IMG_4845.jpg",
+    "images/carousel/61B20924-6FD7-495B-9A25-D93412DE67B5.JPG",
+    "images/carousel/IMG_20250911_131315.jpg",
     "images/carousel/IMG_4846.jpg",
+    "images/carousel/PXL_20250709_223416999.jpg",
+    "images/carousel/IMG_4502.jpeg",
+    "images/carousel/PXL_20250522_212242939.jpg",
+    "images/carousel/IMG_2781.jpeg",
+    "images/carousel/IMG_20250411_164621.jpg",
     "images/carousel/IMG_4852.jpg",
-    "images/carousel/IMG_2781.jpeg"
+    "images/carousel/IMG_4850.jpg",
+    "images/carousel/PXL_20250613_215311076.jpg",
+    "images/carousel/PXL_20240905_020611093.jpg",
+    "images/carousel/PXL_20250108_235326611.jpg",
+    "images/carousel/PXL_20250519_164318825.jpg",
+    "images/carousel/PXL_20251111_173830889.jpg",
+    "images/carousel/PXL_20260612_190204886.jpg"
   ];
 
   (function(){
@@ -736,76 +743,6 @@
     });
   });
 
-  // file list: accumulate selections instead of overwriting, allow removal
-  var fileInput = document.getElementById("file");
-  var filelist = document.getElementById("filelist");
-  var selectedFiles = [];
-
-  function renderFileList(){
-    filelist.innerHTML = "";
-    selectedFiles.forEach(function(f, i){
-      var row = document.createElement("div");
-      row.className = "frow";
-      var name = document.createElement("span");
-      name.textContent = f.name;
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.setAttribute("aria-label", "Remove " + f.name);
-      btn.textContent = "×";
-      btn.addEventListener("click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        selectedFiles.splice(i, 1);
-        syncInput();
-        renderFileList();
-      });
-      row.appendChild(name);
-      row.appendChild(btn);
-      filelist.appendChild(row);
-    });
-  }
-
-  function syncInput(){
-    var dt = new DataTransfer();
-    selectedFiles.forEach(function(f){ dt.items.add(f); });
-    fileInput.files = dt.files;
-  }
-
-  fileInput.addEventListener("change", function(){
-    Array.prototype.forEach.call(fileInput.files, function(f){
-      selectedFiles.push(f);
-    });
-    syncInput();
-    renderFileList();
-  });
-
-  // drag and drop
-  var dropZone = document.getElementById("drop");
-  ["dragenter", "dragover"].forEach(function(evt){
-    dropZone.addEventListener(evt, function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      dropZone.classList.add("dragover");
-    });
-  });
-  ["dragleave", "dragend"].forEach(function(evt){
-    dropZone.addEventListener(evt, function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      dropZone.classList.remove("dragover");
-    });
-  });
-  dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    dropZone.classList.remove("dragover");
-    Array.prototype.forEach.call(e.dataTransfer.files, function(f){
-      selectedFiles.push(f);
-    });
-    syncInput();
-    renderFileList();
-  });
-
   // submit
   form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -815,24 +752,48 @@
     var projectName = form.project_name.value.trim();
     var deadline = form.deadline.value;
     var services = form.querySelectorAll('input[name="service"]:checked').length;
+    var otherService = form.other_service.value.trim();
     var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    if(!name || !validEmail || !projectName || !deadline || services === 0){
+    var missing = [];
+    if(!name) missing.push("Name");
+    if(!email) missing.push("Email");
+    else if(!validEmail) missing.push("a valid Email address");
+    if(!projectName) missing.push("Project Name");
+    if(!deadline) missing.push("whether you have a deadline");
+    if(services === 0 && !otherService) missing.push("at least one service, or a description in the \"other\" box");
+
+    if(missing.length){
+      err.textContent = "Please provide: " + missing.join(", ") + ".";
       err.style.display = "block";
       return;
     }
     err.style.display = "none";
 
-    /* ---- TO GO LIVE: pick ONE ----
-       (a) Formspree: set  <form action="https://formspree.io/f/XXXX" method="POST">
-           and replace this handler's success block with a normal submit / fetch POST.
-       (b) Netlify Forms: add  netlify  attribute to the <form> tag; Netlify captures it.
-       (c) Email: build a mailto link from these values (note: no file attachments over mailto).
-       For now we just show the success state, matching the mockup. */
+    var submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "SENDING…";
 
-    form.style.display = "none";
-    document.getElementById("formOk").classList.add("show");
-    document.getElementById("formOk").scrollIntoView({behavior:"smooth", block:"center"});
+    var formData = new FormData(form);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(!data.success){ throw new Error(data.message || "Submission failed"); }
+        form.style.display = "none";
+        document.getElementById("formOk").classList.add("show");
+        document.getElementById("formOk").scrollIntoView({behavior:"smooth", block:"center"});
+      })
+      .catch(function(e){
+        console.error("Web3Forms submission failed:", e);
+        submitBtn.disabled = false;
+        submitBtn.textContent = "SEND";
+        err.textContent = "Something went wrong sending your request (" + e.message + ") — please try again or email us directly.";
+        err.style.display = "block";
+      });
   });
 
   // Mobile menu (simple)
